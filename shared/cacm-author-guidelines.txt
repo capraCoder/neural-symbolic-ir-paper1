@@ -1,0 +1,386 @@
+ Author Guidelines | Communications of the ACM
+
+Skip to Main Content
+
+
+
+
+Home » about Communications » Author Center » Author Guidelines
+
+     ●   About Communications
+     ●   Current Issue
+     ●   Digital Edition
+     ●   Sample Issue
+     ●   FAQs
+     ●   Author Center
+             ❍ Author Guidelines
+
+                     ■ Research Highlights template
+
+                     ■ Submit an Article
+
+             ❍ ACM Copyright Form
+
+             ❍ ACM Copyright Policy
+
+             ❍ Submit an Article
+
+     ●   2011 Editorial Calendar
+     ●   Editorial Board
+     ●   Editor's Letters
+     ●   Editorial Staff
+     ●   Contact Us
+     ●   For Advertisers
+
+Communicate!
+
+     ●   Send Us Feedback
+     ●   Submit a Letter to the Editor
+
+
+author guidelines
+TABLE OF CONTENTS
+
+1. Introduction
+2. Editorial Structure and Submissions
+    2.1 Editorial Structure
+
+ http://cacm.acm.org/about-communications/author-center/author-guidelines/ (1 of 9)9/12/2011 8:36:15 AM
+ Author Guidelines | Communications of the ACM
+
+   2.2 Submissions
+   2.3 Section Descriptions and Guidelines
+       2.3.1 News
+       2.3.2 Viewpoints
+       2.3.3 Practice
+       2.3.4 Contributed Articles
+       2.3.5 Review Articles
+       2.3.6 Research Highlights
+       2.3.7 Technical Perspective
+       2.3.8 Letters to the Editor
+       2.3.9 Last Byte
+       2.3.10 Virtual Extension
+3. Manuscript Preparation
+4. Supporting Online Material
+5. ACM Policies
+6. Conflicts of Interest
+
+1. Introduction
+
+Communications of the ACM is the leading print and online magazine for professionals working in the
+computing and information technology fields. The Communications monthly magazine is recognized as
+the most trusted and knowledgeable source of news, opinions, research, technology, and public-policy
+information for scientists and practitioners, and has developed a reputation over more than 50 years for
+providing the highest-quality information by and for computing professionals in industry and academia.
+
+The format and editorial structure of the Communications magazine underwent a significant change in
+2008. A new editorial model was developed to broaden its appeal to both practitioners and researchers in
+industry and academia in all fields of computing and information technology, and to provide a more
+international and diverse forum for ideas, practical applications of technology, and scholarly research.
+Submissions for the monthly magazine may include content that can be presented online and is distinct
+from material submitted for the print publication.
+
+There is great competition for publishing articles in the monthly magazine. Submissions must address
+topics of relevance and professional value to a very broad-based readership. The Author Guidelines
+provide information on submitting articles for the monthly magazine. It is best to remember that most
+readers are not experts in an author’s particular discipline, but expect to get a broad perspective on
+computing practice and research. It is important for authors to take into account the broad composition
+of the ACM membership.
+
+Communications' readers represent every known computing discipline. Among ACM’s 65,000
+professional members, about 65% are computing practitioners and managers and 30% are academics and
+
+ http://cacm.acm.org/about-communications/author-center/author-guidelines/ (2 of 9)9/12/2011 8:36:15 AM
+ Author Guidelines | Communications of the ACM
+
+
+researchers. The majority of readers have advanced degrees; among the professional members, 35%
+have master’s degrees and 31% hold a Ph.D. Most members have been involved in computing for more
+than 12 years.
+
+2. Editorial Structure and Submissions
+       2.1 Editorial Structure
+
+The Communications magazine consists primarily of six main editorial sections: News, Viewpoints,
+Practice, Review Articles, Contributed Articles, and Research Highlights. In addition, the magazine
+publishes Letters to the Editor and a section called Last Byte.
+
+In order to manage the flow of articles as efficiently as possible and to ensure a high degree of rigor and
+quality, an editorial board oversees the selection of content for the magazine. The board operates both as
+a single unit and in more focused teams aligned with the editorial sections.
+
+While the selection criteria and editorial process for articles varies by section, the board is responsible
+for maintaining a consistently high level of quality for all sections to ensure that the magazine addresses
+a broad spectrum of topics that appeal to an international readership of practitioners, researchers, and
+educators.
+       2.2 Submissions
+
+Communications continues to welcome unsolicited submissions for publication in the magazine. Certain
+sections, including Practice and Last Byte, publish articles by invitation only.
+
+Submissions to the magazine must address topics of relevance and professional value and be written for
+a broad readership. Submissions that provide a broad perspective on computing practice and research
+appeal to a larger segment of the ACM membership and computing community will be given priority
+over articles that require a significant level of knowledge of specific subject-matter expertise.
+
+All submissions are reviewed by the Communications Editorial Board and Editor-in-Chief, who reserve
+the right to accept or reject any and all submissions at their discretion.
+        2.3 Section Descriptions and Guidelines
+Manuscripts for the monthly magazine's editorial sections are expected to adhere to the following
+guidelines:
+
+         2.3.1 News
+
+         News publishes a selection of brief news updates and in-depth news articles (up to 2,000 words)
+         on a range of U.S. and international topics in computing, information technology, and public-
+         policy issues.
+
+
+
+ http://cacm.acm.org/about-communications/author-center/author-guidelines/ (3 of 9)9/12/2011 8:36:15 AM
+Author Guidelines | Communications of the ACM
+
+
+        Communications' News department employs full-time professional science and technology
+        writers and an expanding network of freelance writers to provide the most current news related to
+        computing and related topics for publication in the print and online editions of the magazine.
+
+         If you are a professional science or technology writer or have written a current news article on a
+        topic you believe is appropriate for the computing community, please send a brief email message
+        with your submission to News@cacm.acm.org.
+
+        2.3.2 Viewpoints
+
+        Viewpoints is dedicated to opinions and views that pertain to issues of broad interest to the
+        computing community, typically, but not exclusively, of a nontechnical nature. Controversial
+        issues will not be avoided but be dealt with fairly. Authors are welcome to submit carefully
+        reasoned “Viewpoints” in which positions are substantiated by facts or principled arguments.
+        Moreover, this section periodically hosts editorial debates in a Point/Counterpoint format in
+        which both sides of an issue are represented.
+
+        Viewpoints articles should consist of up to 1,800 words, include a small number of references
+        (generally, no more than 10), and be submitted to http://cacm.acm.org/submissions.
+
+        2.3.3 Practice
+
+        Practice targets professionals in the software industry with an emphasis on software engineering.
+        Articles published in this section frame and define technical problems and challenges ahead
+        while helping readers sharpen their own thinking and ability to pursue innovative solutions.
+        Practice does not focus on industry news or the latest solutions. Rather, articles explore
+        disruptive technologies that are just on the verge of breaking through.
+
+        This section highlights problems that are likely to arise and poses questions that software
+        engineers should be thinking about while dissecting industry issues that matter most and
+        examines the challenges faced by software architects, project leaders, IT managers, and corporate
+        decision makers.
+
+        Submissions to this section are by invitation only. Detailed submission guidelines will be
+        forwarded to invited authors.
+
+        2.3.4 Contributed Articles
+
+        Contributed Articles cover the wide and abundant spectrum of the computing field—its open
+        challenges, technical visions and perspectives, educational aspects, societal impact, significant
+        applications and research results of high significance and broad interest. Following the roots of
+
+
+http://cacm.acm.org/about-communications/author-center/author-guidelines/ (4 of 9)9/12/2011 8:36:15 AM
+Author Guidelines | Communications of the ACM
+
+        Communications, these submissions are peer-reviewed to ensure the highest quality. Topics
+        covered must reach out to a very broad technical audience. While articles appearing in an ACM
+        Transactions journal are aimed at a specialized audience, articles in Communications should be
+        aimed at the broad computing and information technology community.
+
+        A Contributed Article should set the background and provide introductory references, define
+        fundamental concepts, compare alternate approaches, and explain the significance or application
+        of a particular technology or result by means of well-reasoned text and pertinent graphical
+        material. The use of sidebars to illustrate significant points is encouraged.
+
+        Full-length Contributed Articles should consist of up to 4,000 words, contain no more than 25
+        references, 3-4 tables, 3-4 figures, and be submitted to: http://cacm.acm.org/submissions.
+
+        Submissions to the Contributed Articles section should be accompanied by a cover letter
+        indicating:
+
+        • Title and the central theme of the article;
+        • Statement addressing why the material is important to the computing field and of value to the
+        Communications reader; and,
+        • Names and email addresses of three or more recognized experts who would be considered
+        appropriate to review the submission.
+
+        2.3.5 Review Articles
+
+        Review Articles describe new developments of broad significance to the computing field and
+        highlight unresolved questions and future directions. Unlike an article in ACM Computing
+        Surveys, which provides an in-depth introduction to a technical area, a review article in
+        Communications should offer a high-level perspective on a technical area.
+
+        Authors are encouraged to begin the process by making a pre-submission inquiry, which should
+        include a proposed title, abstract, and a few key references. Proposals will be reviewed and
+        prospective authors will either receive a formal invitation to prepare a full manuscript (note: an
+        invitation to write an article does not guarantee its publication) or a rejection based on the
+        suitability of their proposal for publication in the magazine. Authors who receive a rejection, but
+        are convinced of the importance of their work, may submit a complete manuscript for
+        consideration by the magazine’s Editorial Board.
+
+        All Review Articles undergo a thorough peer-review process. Submissions should consist of up
+        to 6,000 words, include an abstract and introduction, up to 40 references, and be submitted to
+        http://cacm.acm.org/submissions.
+
+        2.3.6 Research Highlights
+
+http://cacm.acm.org/about-communications/author-center/author-guidelines/ (5 of 9)9/12/2011 8:36:15 AM
+Author Guidelines | Communications of the ACM
+
+
+
+        Research Highlights provides readers with a collection of outstanding research articles, selected
+        from the broad spectrum of computing-research conferences. Articles are first nominated by
+        Editorial Board Members or Approved Nominating Organizations and are then subject to final
+        selection by the Editorial Board. Authors are then invited to submit their article, after they have
+        rewritten and expanded their scope as appropriate for the broad readership of Communications.
+
+        It is important to note that publication in Communications, a computing-technology and science
+        magazine, does not conflict with publication in archival journals. Articles in archival journals are
+        typically expanded versions of conference publications, while Communications aims to publish
+        somewhat shorter and higher-level versions of these articles.
+
+        Full-length Research Highlights should consist of no more than eight pages according to the
+        CACM Research Highlights Template and contain no more than 25 references. Authors should
+        note this template is provided as a helpful measuring tool only; it does not reflect camera-ready
+        copy.
+
+        Each selected Research Highlights article is preceded by a one-page (700-800 word) summary.
+
+        2.3.7 Technical Perspective
+
+        Technical Perspective summary essays provide readers with an overview of the underlying
+        motivation, the important ideas of the featured Research Highlight, and its scientific and
+        practical significance. Technical Perspective articles will be written by noted experts in the field
+        addressed by the Research Highlight article and will be invited by the Editorial Board.
+
+        Papers should be submitted to http://cacm.acm.org/submissions.
+
+        2.3.8 Letters to the Editor
+
+        Letters to the Editor consists of comments on articles published in both the print and online
+        editions of Communications, as well as selections or contributions from various blogs published
+        by ACM as appropriate.
+
+        Submitted letters should not exceed 500 words and should include the contributor’s name, email
+        address, and postal address. Due to limited space, Communications cannot publish all submitted
+        letters in the printed magazine. Whenever possible, high-quality letters will be posted on the
+        Communications Web site. Preference will be given to feedback that begins new discussions,
+        adds significant new points to previous discussions, or is highly time-sensitive. Send letters to
+        letters@cacm.acm.org.
+
+        2.3.9 Last Byte
+
+http://cacm.acm.org/about-communications/author-center/author-guidelines/ (6 of 9)9/12/2011 8:36:15 AM
+Author Guidelines | Communications of the ACM
+
+
+
+        Last Byte consists of lighter-fare content that will appear as both regularly appearing columns,
+        such as Q&As, futurist articles dealing with computing, and mathematical puzzles for those who
+        like a good challenge. If you have an idea for a one-time or regularly appearing Last Byte
+        contribution that you believe is appropriate for the computing community, please send a brief
+        email message with your idea to LastByte@cacm.acm.org.
+
+        2.3.10 Virtual Extension
+
+        As with all magazines, page limitations often prevent the publication of articles that might
+        otherwise be included in the print edition. To ensure timely publication, ACM created
+        Communications' Virtual Extension (VE).
+
+        VE articles undergo the same rigorous review process as those in the print edition and are
+        accepted for publication on their merit. Decisions regarding VE articles, like all Communications
+        articles, are made by the Editor-in-Chief. These articles are available in the ACM Digital Library.
+
+        3. Manuscript Preparation
+        The preferred file type for submitted manuscripts, with the exception of Research Highlights, is
+        Word or RTF, but PDF is also acceptable. Research Highlights papers should be submitted as
+        LaTeX files; a Research Highlights template has been provided to help gauge length
+        restrictions. Use of this template does not indicate camera-ready copy.
+
+        All material submitted to Communications is edited and copyedited.
+        All files should reflect the following guidelines:
+
+        Headlines: Article titles should be inviting and manageable. Authors should consider using 6-7
+        words at most and avoid the use of colons if possible.
+
+        References: References (see the Contributed Articles section for citation limits) to previous
+        work should be included at the end of the article. References must be ordered alphabetically by
+        first author and numbered. All listed references must be referred to in text by their corresponding
+        number.
+
+        Artwork: Clear sketches and accurate graphs are sufficient for initial submissions. Upon
+        acceptance of an article, authors will be given instructions regarding the submission of final
+        artwork. Any artwork derived from sources other than the author's own must be accompanied by
+        an appropriate letter of permission and source citation. It is the author's responsibility to obtain
+        such copyright permission and credit wording.
+
+        Accepted Submissions: Upon article acceptance, Communications editors provide authors with
+        additional information regarding final electronic submissions. The lead author for each
+
+http://cacm.acm.org/about-communications/author-center/author-guidelines/ (7 of 9)9/12/2011 8:36:15 AM
+Author Guidelines | Communications of the ACM
+
+        manuscript will be contacted once the article has been slated for publication.
+
+        Once scheduled, Communications editors will edit the article for substance and presentation. All
+        articles will also be copyedited to conform to The Chicago Manual of Style (University of
+        Chicago Press), as well as Communications' house style.
+        All tables and figures are redrawn for consistency by a graphic artist using the drafts supplied.
+        Authors should provide concise titles and caption copy.
+        Articles published in the Communications magazine will run in a two-column or three-column
+        format. Therefore, authors must make sure any programming code or equations included in the
+        manuscript are set for correct line breaks, indentations, and punctuation. Code that runs more
+        than 35 characters wide will be pulled from text and reset as a figure, in which case a figure
+        caption must be supplied.
+
+        4. Supporting Online Material
+
+        Informational resources for the online presentation of articles in every editorial section of
+        Communications are welcome. These materials may include but are not limited to additional
+        tables; figures; URLs for online references; video files; audio files; a list of print references;
+        PowerPoint presentations; and other related materials and links. Information regarding
+        submission of this material is available upon acceptance.
+
+        5. ACM Policies
+        Articles that have been submitted simultaneously to other magazines or journals will be declined
+        outright and not reconsidered.
+        Authors are encouraged to review the ACM Policy and Procedures on Plagiarism, ACM's
+        Copyright Transfer Form, and the Addendum to ACM Copyright Form: Supplemental Material
+        prior to submitting material to Communications.
+
+        6. Conflicts of Interest
+        Communications has a responsibility to publish comprehensive, trustworthy, and unbiased
+        material. It is therefore imperative that Communications' editors be informed of any relationships
+        authors may hold that might possibly pose a conflict of interest.
+        Authors submitting manuscripts to Communications for consideration are therefore required to
+        declare any academic, corporate, government, or professional affiliations, funding sources,
+        financial arrangements, patent holdings, or any other relationships that may be construed as
+        influencing positions in or raising any doubt as to the veracity or objectivity of the material
+        presented in the submitted manuscript.
+        The onus is on authors to disclose any conflict of interest that might bias their work. This
+        information should be addressed in the cover letter accompanying an article or in the article itself.
+        In addition, all financial support for the work and any personal and/or proprietary connections to
+        the work must be acknowledged in the submitted manuscript.
+
+
+
+http://cacm.acm.org/about-communications/author-center/author-guidelines/ (8 of 9)9/12/2011 8:36:15 AM
+ Author Guidelines | Communications of the ACM
+
+
+
+
+Back to Top
+
+
+
+
+ http://cacm.acm.org/about-communications/author-center/author-guidelines/ (9 of 9)9/12/2011 8:36:15 AM
+

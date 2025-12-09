@@ -1,0 +1,45 @@
+Our development team is regularly evaluating and adding LaTeX packages to the list, so please check this page regularly for updates.
+
+Please note that the following packages are included in the "acmart" package; do not include them in your LaTeX source.
+
+amsart
+amsmath
+babel
+balance
+booktabs
+caption
+cmap
+comment
+draftwatermark
+environ
+etoolbox
+fancyhdr
+float
+fontenc
+framed
+geometry
+graphicx
+hyperref
+hyperxmp
+iftex
+libertine
+manyfoot
+microtype
+natbib
+newtxmath
+pbalance
+refcount
+setspace
+totpages
+unicode-math
+xcolor
+xkeyval
+xstring
+zi4
+zref-savepos
+zref-user
+Additinally the experimental tagging code needs the recent (at least 2024) installation of kernel, tagpdf and management-testphase packages. 
+
+ 
+
+Last updated: April 2025 – C. Rodkin
