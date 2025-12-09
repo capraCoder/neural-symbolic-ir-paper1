@@ -9,6 +9,7 @@ Research demonstrating that modern billion-dollar vector database systems are un
 ## Paper
 
 **Title:** The Authority of Neural Scale  
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17872205.svg)](https://doi.org/10.5281/zenodo.17872205)
 **Status:** ✅ Ready for submission  
 **Target:** Communications of the ACM (Contributed Article)  
 **Document:** [`caprazli-neural-scale.pdf`](paper1-convergence/manuscript/submission/caprazli-neural-scale.pdf)
