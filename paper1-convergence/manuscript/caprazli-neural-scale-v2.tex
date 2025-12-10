@@ -1,0 +1,286 @@
+\documentclass[manuscript,screen,nonacm]{acmart}
+
+% Prevent acmart from loading problematic font packages
+\let\libertine\relax
+\let\newtxmath\relax
+
+% --- Packages ---
+\usepackage{framed}
+\usepackage{xcolor}
+
+% Define custom sidebar box environment
+\definecolor{sidebarcolor}{gray}{0.9}
+\newenvironment{sidebarbox}[1][]{%
+  \def\sidebarboxtitle{#1}%
+  \begin{oframed}%
+  \noindent\textbf{\sidebarboxtitle}\par\smallskip
+}{%
+  \end{oframed}%
+}
+
+% --- Metadata ---
+\title{The Authority of Neural Scale}
+
+\author{Kafkas M. Caprazli}
+\authornote{This manuscript represents human-AI collaborative research. The author collaborated with multiple AI systems (Claude Opus 4.1, Perplexity, Gemini Pro) for literature synthesis and drafting. The core insight---that modern systems are independently converging on principles CDS/ISIS exemplified---represents the author's original contribution based on two decades of experience with CDS/ISIS implementations. The author takes full responsibility for all claims.}
+\affiliation{%
+  \institution{Independent Researcher}
+  \city{Wolfsburg}
+  \country{Germany}
+}
+\email{caprazli@gmail.com}
+\orcid{0000-0002-5744-8944}
+
+% --- Abstract ---
+\begin{abstract}
+The information retrieval industry is spending billions to solve scaling challenges that were addressed---under far stricter constraints---in 1985. While modern vector databases struggle beyond 100 million documents, hitting fundamental limits of GPU efficiency, we identify a striking pattern: every successful modern system---from Meta's FAISS to Microsoft's SPANN---has independently converged on architectural principles first comprehensively implemented in \textbf{CDS/ISIS}, a UNESCO database system designed for resource-constrained environments.
+
+This convergence appears to reflect fundamental constraints of information organization. We propose the \textbf{Two-Level Theory}: efficient retrieval requires separating \textbf{semantic understanding} (neural, $O(n \cdot d)$) from \textbf{structural organization} (symbolic, $O(\log k)$). Modern systems encounter scaling barriers when they conflate these layers.
+
+We present the \textbf{Neural-to-Symbolic Bridge}, a framework using modern embeddings to populate classical hierarchical indices. Based on analysis of systems implementing these principles, we project substantial cost and latency improvements. The path forward may require not new invention, but synthesis of neural capability with time-tested structural efficiency.
+\end{abstract}
+
+% --- Keywords ---
+\keywords{information retrieval, vector databases, CDS/ISIS, neuro-symbolic AI, architectural convergence, hierarchical indexing}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction: Why 1985 Matters in 2025}
+
+The vector database industry faces an uncomfortable question: why do the most successful scaling solutions keep reinventing techniques from 1985?
+
+In that year, UNESCO released CDS/ISIS (Computerized Documentation System / Integrated Set of Information Systems), software designed for a specific challenge: building searchable databases for libraries and documentation centers in developing nations. The constraints were severe---machines with 64KB of RAM, unreliable storage, limited technical support. Under these constraints, CDS/ISIS achieved something remarkable: sub-second search across millions of records using hierarchical B-tree indices and inverted files \cite{delbigio1995, unesco1989}.
+
+Forty years later, Silicon Valley faces analogous constraints at a different scale. Vector databases must search billions of high-dimensional embeddings. GPU memory is expensive. Latency requirements are strict. The underlying physics---the need to minimize comparisons while maximizing recall---remains unchanged.
+
+This article documents a pattern we find striking: the architectural solutions that work at scale in 2025 closely resemble those that worked under constraint in 1985. Meta's FAISS uses inverted files for vector centroids \cite{johnson2017}. Microsoft's DiskANN uses hierarchical graph navigation with logarithmic complexity \cite{subramanya2019}. Google's ScaNN uses adaptive quantization to compress representations \cite{guo2020}. Each innovation, developed independently, converges on principles that CDS/ISIS comprehensively implemented decades earlier.
+
+We do not claim CDS/ISIS invented these techniques---inverted files, B-trees, and variable-length encoding predate it. We claim something more specific: CDS/ISIS represents a historical proof-of-concept that \emph{these techniques, combined under extreme constraint, achieve optimal efficiency}. The convergence we observe suggests the industry is rediscovering, not these individual techniques, but their necessary integration.
+
+This article presents:
+\begin{enumerate}
+    \item Evidence that seven major systems converge on CDS/ISIS-style architecture
+    \item A \textbf{Two-Level Theory} explaining why this convergence may be necessary
+    \item A \textbf{Neural-to-Symbolic Bridge} framework synthesizing neural embeddings with classical indexing
+\end{enumerate}
+
+\section{Background: What Was CDS/ISIS?}
+
+For readers unfamiliar with CDS/ISIS, some context helps explain why a 1985 UNESCO project matters to modern AI infrastructure.
+
+\subsection{The System and Its Constraints}
+
+CDS/ISIS was a text database management system designed primarily for bibliographic records---library catalogs, research abstracts, documentation archives. It was distributed free to institutions in developing countries, eventually reaching over 100 countries and powering databases at organizations including the UN Food and Agriculture Organization (FAO), where the author worked on implementations including AGRIS (agricultural research) and ASFA (aquatic sciences) \cite{fao2005}.
+
+The design constraints were extraordinary by modern standards:
+\begin{itemize}
+    \item \textbf{Memory:} 64KB RAM on early implementations
+    \item \textbf{Storage:} Slow, unreliable disk drives
+    \item \textbf{Processing:} Single-core CPUs measured in MHz
+    \item \textbf{Users:} Non-technical librarians requiring robust, self-maintaining systems
+\end{itemize}
+
+Under these constraints, CDS/ISIS achieved what would now be called ``web-scale'' performance for its domain: millions of records searchable in sub-second time.
+
+\subsection{The Architectural Solution}
+
+CDS/ISIS's architecture separated concerns in ways that mirror modern best practices:
+
+\textbf{Master File (Storage):} Records stored with variable-length fields following ISO 2709, the international standard for bibliographic interchange \cite{iso2709}. This is functionally equivalent to modern ``ragged tensors''---no padding, no wasted space.
+
+\textbf{Inverted File (Access):} A separate index mapping terms to record pointers, organized as a B-tree. This is the same inverted index structure underlying Lucene, Elasticsearch, and---as we will show---modern vector databases.
+
+\textbf{Hierarchical Organization:} The B-tree structure guaranteed $O(\log n)$ lookup regardless of database size. For a million records, this meant roughly 20 disk seeks versus a million comparisons.
+
+The separation of storage (what to retrieve) from access (how to find it) is precisely the architectural pattern we argue modern systems are rediscovering.
+
+\section{The Two-Level Theory of Information Retrieval}
+
+Why do scaling solutions keep converging on this architecture? We propose that efficient retrieval at scale requires decomposing the problem into two fundamentally different layers.
+
+\subsection{Level 1: Semantic Understanding}
+
+Modern neural embeddings excel at capturing meaning. Transformer models map text into high-dimensional vector spaces $\mathbb{R}^d$ where geometric proximity correlates with semantic similarity. This is a genuine breakthrough---a query about ``agricultural commodity futures'' will cluster near documents about ``grain market derivatives'' despite sharing no keywords.
+
+But this capability has inherent costs. Finding the $k$ most similar vectors among $n$ documents requires, in the worst case, computing $n$ similarity scores. With $d$-dimensional vectors, this is $O(n \cdot d)$ operations. For a billion documents with 768-dimensional embeddings, that is 768 billion operations per query.
+
+Approximate methods (HNSW, IVF) reduce this, but the fundamental scaling pressure remains: semantic similarity requires geometric computation, and geometric computation scales with data size.
+
+\subsection{Level 2: Structural Organization}
+
+CDS/ISIS solved a different problem: given a known term, find all records containing it. This is not semantic similarity---it is exact lookup. The solution is structural: organize the index so that lookup requires traversing a tree of depth $\log n$, not scanning $n$ items.
+
+The key insight is that this structural efficiency is \emph{independent of vocabulary size}. Whether your index has 10,000 terms or 10 million, B-tree lookup remains $O(\log k)$. The structure guarantees efficiency regardless of content.
+
+\subsection{The Synthesis}
+
+The Two-Level Theory proposes that scalable retrieval requires both layers:
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+\textbf{Layer} & \textbf{Function} & \textbf{Complexity} \\
+\midrule
+Level 1 (Neural) & Semantic understanding & $O(d)$ per item \\
+Level 2 (Symbolic) & Structural organization & $O(\log k)$ total \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Pure neural approaches force all complexity into Level 1: $O(n \cdot d)$. Pure symbolic approaches (keyword search) have efficient Level 2 but cannot handle semantic variation. The synthesis uses neural methods to generate discrete ``keys'' that symbolic structures can efficiently organize.
+
+This is precisely what modern systems are converging toward---and precisely what CDS/ISIS achieved with terms rather than embeddings.
+
+\section{Evidence: Seven Systems, One Pattern}
+
+We examined seven major vector search systems and found each independently adopting CDS/ISIS-style architectural elements.
+
+\begin{table}[h]
+\centering
+\caption{Architectural Convergence: Modern Systems and CDS/ISIS Principles}
+\label{tab:convergence}
+\begin{tabular}{p{0.12\textwidth} p{0.06\textwidth} p{0.28\textwidth} p{0.22\textwidth} p{0.18\textwidth}}
+\toprule
+\textbf{System} & \textbf{Year} & \textbf{Innovation} & \textbf{Principle} & \textbf{CDS/ISIS Analog} \\
+\midrule
+FAISS IVF & 2017 & Inverted files for vectors & Inverted indexing & IF structure \\
+DiskANN & 2019 & Hierarchical graph navigation & $O(\log n)$ traversal & B-tree depth \\
+ScaNN & 2020 & Anisotropic quantization & Adaptive encoding & Variable fields \\
+SPANN & 2021 & Hierarchical clustering & Hierarchical decomposition & Multi-level index \\
+Cont. Batching & 2024 & Ragged tensor batching & Variable-length storage & ISO 2709 records \\
+Pinecone & 2024 & Serverless vector index & Distributed IF & Federated search \\
+Weaviate & 2025 & Hybrid HNSW+inverted & Dual index & Master + IF files \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Case Study: FAISS IVF}
+
+Meta's FAISS (2017) introduced ``Inverted File'' indexing for vectors \cite{johnson2017}. The approach: cluster vectors into Voronoi cells, then build an inverted index mapping cluster IDs to vector lists. At query time, identify the nearest clusters (a small number), then search only vectors in those clusters.
+
+This is structurally identical to CDS/ISIS's inverted file, substituting cluster centroids for text terms. The innovation is not the index structure---it is applying that structure to continuous embeddings.
+
+\subsection{Case Study: Microsoft SPANN}
+
+SPANN (2021) explicitly uses ``hierarchical balanced clustering'' with posting lists stored on SSD \cite{chen2021}. The paper reports 96\% recall on billion-scale datasets with memory costs far below naive approaches.
+
+The architecture separates concerns exactly as CDS/ISIS did: a small in-memory index for navigation (analogous to the B-tree upper levels), with posting lists on disk (analogous to the inverted file).
+
+\subsection{The Pattern}
+
+Across all seven systems, we observe:
+\begin{itemize}
+    \item Separation of navigation structure from data storage
+    \item Hierarchical organization enabling $O(\log n)$ access paths
+    \item Quantization or clustering to convert continuous embeddings into discrete keys
+    \item Inverted structures mapping keys to document sets
+\end{itemize}
+
+No system explicitly cites CDS/ISIS. The convergence appears to be independent rediscovery driven by shared constraints.
+
+\section{The Neural-to-Symbolic Bridge}
+
+Based on this analysis, we propose a framework that makes the two-level decomposition explicit.
+
+\subsection{Architecture}
+
+The Neural-to-Symbolic Bridge operates as a pipeline:
+
+\[ \text{Query} \xrightarrow{\text{Encoder}} \mathbb{R}^d \xrightarrow{\text{Quantize}} \Sigma \xrightarrow{\text{B-tree}} \text{Documents} \]
+
+\begin{enumerate}
+    \item \textbf{Neural Encoding (Level 1):} A language model maps text to dense vector $v \in \mathbb{R}^d$.
+    \item \textbf{Quantization Bridge:} Function $Q: \mathbb{R}^d \rightarrow \Sigma$ maps the vector to a discrete symbol (e.g., cluster ID). This is the critical step: converting continuous semantics to discrete keys.
+    \item \textbf{Symbolic Indexing (Level 2):} Standard B-tree or inverted file lookup using the discrete symbol.
+\end{enumerate}
+
+This makes explicit what FAISS, SPANN, and others do implicitly: use neural methods for Level 1, then hand off to classical structures for Level 2.
+
+\subsection{Connection to Authority Control}
+
+The quantization step has a historical analog in library science: \textbf{authority control}. Libraries maintain controlled vocabularies mapping variant terms (``USA'', ``United States'', ``U.S.'') to canonical forms. This enables consistent retrieval despite surface variation.
+
+Vector quantization performs the same function: mapping the infinite variation of embedding space to finite canonical cluster IDs. The author's prior work on unified authority files for FAO \cite{caprazli2003} explored this problem in the bibliographic domain; the same principle applies to semantic retrieval.
+
+\subsection{Projected Benefits}
+
+Systems implementing this architecture (SPANN, DiskANN) report:
+\begin{itemize}
+    \item \textbf{Complexity:} $O(\log k)$ rather than $O(n \cdot d)$
+    \item \textbf{Memory:} Index structures fit in RAM; data on SSD
+    \item \textbf{Latency:} Single-digit milliseconds at billion scale
+\end{itemize}
+
+We project that explicit adoption of this framework could yield cost reductions of an order of magnitude compared to brute-force approaches, though precise figures depend on workload characteristics.
+
+\section{Why Now? The 2025 Inflection Point}
+
+Three developments make this synthesis timely:
+
+\textbf{Embedding Quality:} Modern encoders (sentence transformers, instruction-tuned models) produce embeddings where geometric proximity reliably indicates semantic relevance. Level 1 is solved well enough that Level 2 efficiency becomes the bottleneck.
+
+\textbf{Scale Requirements:} RAG (Retrieval-Augmented Generation) systems require searching billion-scale corpora in real-time. The $O(n \cdot d)$ approaches that worked at million-scale fail economically at billion-scale.
+
+\textbf{Theoretical Clarity:} Recent work establishes fundamental limits of embedding-based retrieval \cite{weller2025}, suggesting that hierarchical decomposition is not merely convenient but necessary for certain retrieval tasks.
+
+The industry has arrived, through different paths, at the same architectural insight CDS/ISIS embodied: structure must complement semantics for scalable retrieval.
+
+\section{Limitations and Open Questions}
+
+This analysis has limitations we acknowledge:
+
+\textbf{Correlation vs. Causation:} We document convergence but cannot prove it is causally driven by mathematical necessity rather than, for example, shared training or researcher mobility.
+
+\textbf{Implementation Details:} CDS/ISIS solved text retrieval; vector search involves additional challenges (approximate nearest neighbor, high dimensionality) that 1985 techniques do not directly address.
+
+\textbf{Empirical Validation:} Our claims about cost reduction are projections based on reported results from systems like SPANN, not independent measurements.
+
+\textbf{Open Questions:}
+\begin{itemize}
+    \item What quantization granularity optimally balances recall and efficiency?
+    \item Can recursive hierarchies ($O(\log \log n)$) provide further gains?
+    \item How should Level 1 and Level 2 be co-optimized rather than treated as independent pipelines?
+\end{itemize}
+
+\section{Conclusion}
+
+We have documented a pattern: the architectural solutions that enable vector search at scale---hierarchical indices, inverted files, discrete quantization---closely mirror techniques comprehensively implemented in CDS/ISIS forty years ago.
+
+This convergence suggests that efficient information retrieval at scale may require separating semantic understanding (where neural methods excel) from structural organization (where classical data structures excel). We call this the \textbf{Two-Level Theory}.
+
+The practical implication is the \textbf{Neural-to-Symbolic Bridge}: explicitly using neural encoders for Level 1 and classical indices for Level 2, rather than forcing neural computation to handle both.
+
+This is not a claim that modern systems lack innovation---the algorithmic advances in approximate nearest neighbor search are genuine. It is a claim that these advances succeed precisely when they converge on structural principles that constraint-driven design discovered decades ago.
+
+The implications extend beyond information retrieval. As AI systems scale, they may increasingly need to partner neural capability with symbolic efficiency. The lesson from 1985 is that such partnerships are not compromise---they may be optimal architecture.
+
+\begin{sidebarbox}[CDS/ISIS: Historical Context]
+\begin{itemize}
+    \item \textbf{Origin:} UNESCO, 1985; based on ILO's ISIS system
+    \item \textbf{Purpose:} Database management for libraries in developing countries
+    \item \textbf{Scale:} Millions of records on 64KB-256KB systems
+    \item \textbf{Reach:} Over 100 countries; still in use today
+    \item \textbf{Key Features:} ISO 2709 variable fields, B-tree inverted files
+    \item \textbf{Legacy:} Influenced AGRIS, ASFA, and other global bibliographic systems
+\end{itemize}
+\end{sidebarbox}
+
+\begin{sidebarbox}[Key Takeaways for Practitioners]
+\begin{itemize}
+    \item Modern vector search systems (FAISS, SPANN, DiskANN) converge on hierarchical indexing---the same architecture CDS/ISIS used in 1985.
+    \item The \textbf{Two-Level Theory}: separate semantic encoding ($O(n \cdot d)$) from structural lookup ($O(\log k)$) for scalable retrieval.
+    \item The \textbf{Neural-to-Symbolic Bridge}: use embeddings to generate discrete keys; let classical indices handle navigation.
+    \item Historical systems designed under constraint can reveal optimal architectures that abundance obscures.
+\end{itemize}
+\end{sidebarbox}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\begin{acks}
+Kafkas M. Caprazli worked with FAO teams implementing CDS/ISIS-based systems including AGRIS, CARIS, ASFA, and DOCREP. He contributed to multilingual implementations including Thai AGROVOC and co-authored research on unified authority files \cite{caprazli2003}. This work draws on that experience to connect historical and modern information retrieval architectures.
+\end{acks}
+
+\end{document}
