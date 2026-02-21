@@ -1,0 +1,259 @@
+% ============================================================================
+% references-v3.bib - CACM Paper 1: The Authority of Neural Scale
+% Author: Kafkas M. Caprazli
+% Version: v3 (Technical Rigor)
+% Last updated: 2025-12-10
+% Changes from original: Removed TiDAR (liu2024), added learned indexes (kraska2018)
+% ============================================================================
+
+% --- Historical CDS/ISIS Sources ---
+
+@techreport{delbigio1995,
+  author      = {Del Bigio, Giampaolo},
+  title       = {The {CDS/ISIS} System: Technical Foundations},
+  institution = {UNESCO},
+  address     = {Paris},
+  year        = {1995},
+  url         = {https://unesdoc.unesco.org/ark:/48223/pf0000101570}
+}
+
+@article{rybinski1999,
+  author      = {Rybi{\'n}ski, Henryk},
+  title       = {{WWW-ISIS}: Scaling {CDS/ISIS} to the Web},
+  journal     = {ICIE Technical Report},
+  year        = {1999},
+  address     = {Warsaw},
+  url         = {http://w2isis.icml9.org/activity.php?lang=en&id=33}
+}
+
+@manual{unesco1989,
+  author       = {{UNESCO}},
+  title        = {{CDS/ISIS} Reference Manual Version 3.0},
+  organization = {UNESCO},
+  address      = {Paris},
+  year         = {1989},
+  url          = {https://unesdoc.unesco.org/ark:/48223/pf0000194203}
+}
+
+@techreport{fao2005,
+  title        = {The {AGRIS} Application Profile for the International Information System on Agricultural Sciences and Technology: Guidelines on Best Practices for Information Object Description},
+  author       = {{FAO, Rome (Italy). Library and Documentation Systems Div.}},
+  institution  = {Food and Agriculture Organization of the United Nations},
+  address      = {Rome, Italy},
+  year         = {2005},
+  month        = jul,
+  note         = {Version 2.0, 81 p.},
+  url          = {https://openknowledge.fao.org/server/api/core/bitstreams/00b4c742-6673-4420-bb66-5b7c2ba3a668/content/ae909e01.htm}
+}
+
+% --- Author's Prior Work ---
+
+@InProceedings{caprazli2003,
+  author    = {Weinheimer, James and Caprazli, Kafkas},
+  editor    = {Koch, Traugott and S{\o}lvberg, Ingeborg Torvik},
+  title     = {A Framework for Unified Authority Files: A Case Study of Corporate Body Names in the {FAO} Catalogue},
+  booktitle = {Research and Advanced Technology for Digital Libraries},
+  year      = {2003},
+  publisher = {Springer Berlin Heidelberg},
+  doi       = {10.1007/978-3-540-45175-4_34},
+  address   = {Berlin, Heidelberg},
+  pages     = {374--386},
+  isbn      = {978-3-540-45175-4}
+}
+
+% --- Modern Vector Database Systems ---
+
+@article{johnson2017,
+  author  = {Johnson, Jeff and Douze, Matthijs and J{\'e}gou, Herv{\'e}},
+  title   = {Billion-scale similarity search with {GPUs}},
+  journal = {arXiv preprint arXiv:1702.08734},
+  year    = {2017},
+  url     = {https://arxiv.org/abs/1702.08734}
+}
+
+@inproceedings{subramanya2019,
+  author    = {Subramanya, Suhas and Devvrit, F. and Simhadri, Harsha Vardhan and Krishnawamy, Ravishankar and Kadekodi, R.},
+  title     = {{DiskANN}: Fast accurate billion-point nearest neighbor search on a single node},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume    = {32},
+  year      = {2019},
+  url       = {https://proceedings.neurips.cc/paper/2019/hash/093f65e080a295f8076b1c5722a46aa2-Abstract.html}
+}
+
+@inproceedings{guo2020,
+  author    = {Guo, Ruiqi and Sun, Philip and Lindgren, Erik and others},
+  title     = {Accelerating Large-Scale Inference with Anisotropic Vector Quantization},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  pages     = {3887--3896},
+  year      = {2020},
+  url       = {http://proceedings.mlr.press/v119/guo20c.html}
+}
+
+@inproceedings{chen2021,
+  author    = {Chen, Qi and Wang, Bing and Zhang, Mingqin and others},
+  title     = {{SPANN}: Highly-efficient billion-scale approximate nearest neighbor search},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume    = {34},
+  year      = {2021},
+  url       = {https://proceedings.neurips.cc/paper_files/paper/2021/hash/299dc35e747eb77177d9cea10a802da2-Abstract.html}
+}
+
+% NOTE: TiDAR (liu2024) REMOVED - Not an IR system, it's an LLM text generation accelerator
+
+@misc{pinecone2024,
+  author       = {{Pinecone Systems}},
+  title        = {Pricing and Performance Documentation},
+  year         = {2024},
+  howpublished = {Technical Documentation},
+  note         = {Accessed: 2025-12-05},
+  url          = {https://www.pinecone.io/pricing/}
+}
+
+@misc{weaviate2025,
+  author       = {{Weaviate}},
+  title        = {Hybrid Search Architecture},
+  year         = {2025},
+  howpublished = {Technical Blog},
+  note         = {Accessed: 2025-12-05},
+  url          = {https://weaviate.io/blog/hybrid-search-explained}
+}
+
+@misc{reboul2025,
+  author       = {Reboul, R{\'e}mi Ouazan and Zucker, Arthur and Georges, Luc},
+  title        = {Continuous Batching: From Attention to High-Throughput Inference},
+  howpublished = {Hugging Face Technical Blog},
+  year         = {2025},
+  month        = nov,
+  note         = {Accessed: 2025-12-09},
+  url          = {https://huggingface.co/blog/continuous_batching}
+}
+
+% --- Industry Reports ---
+
+@techreport{bruckhaus2024,
+  author      = {Bruckhaus, Tilmann},
+  title       = {{RAG} does not work for enterprises},
+  institution = {Strative Industry Report},
+  year        = {2024},
+  url         = {https://arxiv.org/pdf/2406.04369.pdf}
+}
+
+@techreport{vectordb2024,
+  author      = {{Market Research Future}},
+  title       = {Vector Database Market Report},
+  institution = {Industry Analysis Quarterly},
+  year        = {2024},
+  note        = {Accessed: 2025-12-01},
+  url         = {https://www.marketresearchfuture.com/reports/vector-database-market-32105}
+}
+
+% --- Theoretical Foundations ---
+
+@article{weller2025,
+  author  = {Weller, Orion and Boratko, Michael and Naim, I. and Lee, J.},
+  title   = {On the theoretical limitations of embedding-based retrieval},
+  journal = {arXiv preprint arXiv:2508.21038},
+  year    = {2025},
+  url     = {https://arxiv.org/abs/2508.21038}
+}
+
+@article{chen2025,
+  author  = {Chen, T. Y. and others},
+  title   = {Rate-Distortion Limits for Multimodal Retrieval: Theory, Optimal Codes, and Finite-Sample Guarantees},
+  journal = {arXiv preprint arXiv:2509.11054},
+  year    = {2025},
+  note    = {Columbia University},
+  url     = {https://arxiv.org/abs/2509.11054}
+}
+
+@article{korten2025,
+  author  = {Korten, Omri and Pitassi, T. and Impagliazzo, R.},
+  title   = {Stronger Cell Probe Lower Bounds via Local {PRGs}},
+  journal = {Electronic Colloquium on Computational Complexity (ECCC)},
+  volume  = {TR25-030},
+  year    = {2025},
+  url     = {https://eccc.weizmann.ac.il/report/2025/030/}
+}
+
+@techreport{zandieh2025,
+  author      = {Zandieh, Ali and Daliri, M. and Hadian, M. and Mirrokni, V.},
+  title       = {{TurboQuant}: Online Vector Quantization with Near-optimal Distortion Rate},
+  institution = {Google Research},
+  year        = {2025},
+  url         = {https://arxiv.org/abs/2504.19874}
+}
+
+% --- Learned Indexes (NEW in v3) ---
+
+@inproceedings{kraska2018,
+  author    = {Kraska, Tim and Beutel, Alex and Chi, Ed H. and Dean, Jeffrey and Polyzotis, Neoklis},
+  title     = {The Case for Learned Index Structures},
+  booktitle = {Proceedings of the 2018 International Conference on Management of Data (SIGMOD)},
+  year      = {2018},
+  pages     = {489--504},
+  publisher = {ACM},
+  doi       = {10.1145/3183713.3196909},
+  url       = {https://dl.acm.org/doi/10.1145/3183713.3196909}
+}
+
+% --- Classic IR References ---
+
+@article{zobel2006,
+  author  = {Zobel, Justin and Moffat, Alistair},
+  title   = {Inverted files for text search engines},
+  journal = {ACM Computing Surveys},
+  volume  = {38},
+  number  = {2},
+  pages   = {6},
+  year    = {2006},
+  doi     = {10.1145/1132956.1132959}
+}
+
+@article{shannon1948,
+  author  = {Shannon, Claude E.},
+  title   = {A Mathematical Theory of Communication},
+  journal = {Bell System Technical Journal},
+  volume  = {27},
+  number  = {3},
+  pages   = {379--423},
+  year    = {1948},
+  url     = {https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf}
+}
+
+@book{knuth1998,
+  author    = {Knuth, Donald E.},
+  title     = {The Art of Computer Programming, Volume 3: Sorting and Searching},
+  publisher = {Addison-Wesley},
+  edition   = {2nd},
+  year      = {1998},
+  url       = {https://www-cs-faculty.stanford.edu/~knuth/taocp.html}
+}
+
+% --- Standards ---
+
+@misc{iso2709,
+  author       = {{International Organization for Standardization}},
+  title        = {{ISO} 2709:2008 Information and documentation---Format for information exchange},
+  year         = {2008},
+  howpublished = {International Standard},
+  address      = {Geneva},
+  url          = {https://www.iso.org/standard/41319.html}
+}
+
+% --- Unused but available ---
+
+@article{wang2025,
+  author  = {Wang, Bei and others},
+  title   = {Survey of {IR} Model Architectures},
+  journal = {arXiv preprint arXiv:2502.14822},
+  year    = {2025},
+  url     = {https://arxiv.org/abs/2502.14822}
+}
+
+@misc{microsoft2021,
+  author       = {{Microsoft Research}},
+  title        = {{SPANN}: System Architecture and Performance},
+  howpublished = {Microsoft Research Blog},
+  year         = {2021},
+  url          = {https://www.microsoft.com/en-us/research/publication/spann-highly-efficient-billion-scale-approximate-nearest-neighbor-search/}
+}
